@@ -1,17 +1,20 @@
 jquery
 element ui/iview/bootstrap
 echart/svg/canvas
-rgb/hex/grba/hsla
+rgb/hex/rgba/hsla
 /grid/flex/transform/animate/3d/渐变
 /伪类/伪元素/rem/自适应布局/scss/less/float/
 css/css3/css 选择器/css 样式的优先级（行内、外部、!important）/盒模型
 scrollTop; //滚动条在y轴上的滚动距离，没有滚动条时，scrollTop=0
 clientHeight; //可见部分元素的高度
 scrollHeight; // clientHeight+不可见的高/over-flw/绝对定位/相对定位/calc/@media device/line-height/height/
-box-sizing/
+box-sizing/伪元素字体图标
 
-1.浏览器的computed计算元素属性
-2.
+nth-type(1)
+> 直接子元素
+dv.active{}  同级的样式
+html,body{} 都应用这个样式
+
 
 
 
