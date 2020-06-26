@@ -7,4 +7,4 @@ https://meyerweb.com/eric/tools/css/reset/
 #3 统一设置所有兼容性的平台字体
 #4  去掉ins、a下划线
 #5 border-box
-#6 
+#6.html,body 100%

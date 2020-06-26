@@ -14,9 +14,12 @@
     .c1 {
         border: 1px solid;
         width: 8em;
-        overflow-wrap: normal;
-        word-break: normal;
-        white-space: normal;
+        overflow-wrap: break-word;
+        /*
+        normal：允许内容顶开或溢出指定的容器边界。
+        break-word：内容在边界内换行。单词内部允许断行，但尽量保持单词完整性
+         */
+        /*white-space: nowrap; !*不换行*!*/
     }
 </style>
 </html>

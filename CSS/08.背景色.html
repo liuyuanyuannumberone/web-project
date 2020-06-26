@@ -6,8 +6,8 @@
 </head>
 <body>
 <!--<div class="bg1"></div>-->
-<div class="c1"></div>
-<div class="c2"></div>
+<!--<div class="c1"></div>-->
+<!--<div class="c2"></div>-->
 <!--<div class="bg3"></div>-->
 <!--<hr>-->
 <!--<div class="bg4"></div>-->
@@ -18,6 +18,10 @@
 <!--<hr>-->
 <!--<div class="bg7"></div>-->
 <!--<hr>-->
+<div class="dv">
+    <input type="checkbox" id="me"/>
+    <label for="me">我很帅</label>
+</div>
 </body>
 <style>
     .bg1 {
@@ -65,6 +69,21 @@
         height: 90px;
         background: linear-gradient(45deg, transparent 0, transparent 49.5%, red 49.5%,
         red 50.5%, transparent 50.5%, transparent 100%);;
+    }
+</style>
+<style>
+    .dv input {
+        display: block;
+    }
+
+    .dv label {
+        background: url(./img/checkbox1.png) left center no-repeat;
+        background-size: 20px 20px;
+        padding-left: 20px;
+    }
+
+    .dv input:checked + label {
+        background-image: url(./img/checkbox2.png);
     }
 </style>
 </html>
