@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    #dv {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        left: 300px;
+        top: 100px;
+    }
+
+    .strengthLv0 {
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv1 {
+        background: red;
+        height: 6px;
+        width: 40px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv2 {
+        background: orange;
+        height: 6px;
+        width: 80px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv3 {
+        background: green;
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+</style>
+<body>
+<div id="dv">
+    <label for="pwd">密码</label>
+    <input type="text" id="pwd" maxlength="16">
+    <div>
+        <em>密码强度：</em>
+        <div id="strengthLevel" class="strengthLv0"></div>
+    </div>
+</div>
+<label for="email">请您输入邮箱地址:</label>
+<input type="text" value="" id="email">
+<label for="userName">请输入您的名字:</label>
+<input type="text" value="" id="userName"/>
+</body>
+
+<script>
+  document.querySelector("#pwd").onkeyup = function () {
+    document.querySelector("#strengthLevel").className =
+      "strengthLv" + (this.value.length >= 6 ? getLvl(this.value) : 0);
+  };
+
+  function getLvl(pwd) {
+    var lvl = 0;//默认是0级
+    //密码中是否有数字
+    if (/[0-9]/.test(pwd)) {
+      lvl++;
+    }
+    //判断密码中有没有字母
+    if (/[a-zA-Z]/.test(pwd)) {
+      lvl++;
+    }
+    //判断密码中有没有特殊符号
+    if (/[^0-9a-zA-Z_]/.test(pwd)) {
+      lvl++;
+    }
+    return lvl;//最小的值是1,最大值是3
+  }
+</script>
+
+<script>
+  //如果输入的是邮箱,那么背景颜色为绿色,否则为红色
+  //注册失去焦点的事件
+  document.getElementById("email").onblur = function () {
+    //判断这个文本框中输入的是不是邮箱
+    var reg = /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/;
+    if (reg.test(this.value)) {
+      this.style.backgroundColor = "green";
+    } else {
+      this.style.backgroundColor = "red";
+    }
+  };
+</script>
+
+<script>
+  document.getElementById("userName").onblur = function () {
+    var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+    if (reg.test(this.value)) {
+      this.style.backgroundColor = "green";
+    } else {
+      this.style.backgroundColor = "pink";
+    }
+  };
+</script>
+
+</html>

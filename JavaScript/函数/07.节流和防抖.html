@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流和防抖</title>
+</head>
+<body>
+<button id='btn'>按钮</button>
+<a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651556136&idx=1&sn=cbcddd6
+0c4c2e1626088ed10e349e50
+3&chksm=80255ee9b752d7ffb7d4649651d64f0706b01c8f3add600652413f9bcf45
+d678331970a477e0&scene=0&xtrack=1#rd">防抖</a>
+</body>
+<script>
+    /*
+    *
+    * 所谓节流，是指频繁触发事件时，只会在指定的时间段内执行事件回调，即触发事件间隔大于等于指定的时间才会执行回调函数。
+    * */
+    //函数节流：一个函数执行一次后，只有大于设定的周期才会执行第二次
+    /*
+    * 第一种方法  时间戳
+    *
+    * 1、使用时间戳方式，页面加载的时候就会开始计时，如果页面加载时间大于我们设定的delayTime，第一次触发事件回调的时候便会立即fn，并不会延迟。如果最后一次触发回调与前一次触发回调的时间差小于delayTime，则最后一次触发事件并不会执行fn；
+    * */
+
+    //只有大于指定时间才会执行
+    function throttle1(fn, delay) {
+        //记录上一次触发的时间
+        var lastTime = 0;
+        return function () {
+            //记录当前函数触发的时间
+            var nowTime = Date.now();
+            if (nowTime - lastTime > delay) {
+                //修正this指向
+                fn.call(this);
+                lastTime = nowTime;
+            }
+        }
+    }
+
+    /*
+    * 第二种方法 定时器   使用定时器方式，我们第一次触发回调的时候才会开始计时，如果最后一次触发回调事件与前一次时间间隔小于delayTime，delayTime之后仍会执行fn
+    * */
+
+    function throttle2(fn, delay) {
+        var flag;
+        return function () {
+            args = arguments;
+            if (!flag) {
+                flag = setTimeout(
+                    function () {
+                        fn.apply(this, args);
+                        flag = false;
+                    }, delay);
+            }
+        }
+    }
+
+
+    /*
+      我们考虑把这两种方式结合起来，便会在第一次触发事件时执行fn，最后一次与前一次间隔比较短，delayTime之后再次执行fn。
+    想法简单实现如下：*/
+
+    function throttle3(fn, delayTime) {
+        var flag, _start = Date.now();
+        return function () {
+            var context = this, args = arguments,
+                _now = Date.now(),
+                remainTime = delayTime - (_now - _start);
+            if (remainTime <= 0) {
+                fn.apply(this, args);
+            } else {
+                setTimeout(function () {
+                    fn.apply(this, args);
+                }, remainTime)
+            }
+        }
+    }
+
+    document.onscroll = throttle1(function () {
+        console.log('scoll事件触发了' + Date.now())
+    }, 200);
+
+    /*
+    * 以我们生活中乘车刷卡的情景举例，只要乘客不断地在刷卡，司机师傅就不能开车，乘客刷卡完毕之后，司机会等待几分钟，确定乘客坐稳再开车。如果司机在最后等待的时间内又有新的乘客上车，那么司机等乘客刷卡完毕之后，还要再等待一会，等待所有乘客坐稳再开车。
+    * */
+    /*
+    * 所谓防抖，就是指触发事件后，就是把触发非常频繁的事件合并成一次去执行。即在指定时间内只执行一次回调函数，如果在指定的时间内又触发了该事件，则回调函数的执行时间会基于此刻重新开始计算。
+    * */
+    //函数防抖 一个需要频繁触发的函数，在规定的时间内只让最后一次生效，前面的不生效
+    // 其原理就第一次调用函数，创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。如果前一个定时器已经执行过了，这个操作就没有任何意义。然而，如果前一个定时器尚未执行，其实就是将其替换为一个新的定时器，然后延迟一定时间再执行。
+
+    //点击后过1s后执行，这个函数的作用点击后在规定的时间内执行一次;
+    //只要我不停的点击，你的函数就无法触发，点击后指定时间内触发一次=-----类似公交刷卡
+    function debounce(fn, delay) {
+        // 记录上一次的延时器
+        var timer = null;
+        return function () {
+            // 清除上一次延时器
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                fn.apply(this)
+            }, delay)
+        }
+    }
+
+    document.getElementById('btn').onclick = debounce(function () {
+        console.log('点击事件被触发' + Date.now())
+    }, 1000)
+</script>
+<style>
+    html body {
+        height: 8000px;
+    }
+</style>
+</html>
+
