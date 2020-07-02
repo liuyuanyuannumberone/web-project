@@ -47,6 +47,12 @@ arr.some(currentValue,index,arr);
     let arr7 = [1, 2, 3, 4];
     arr7.splice(2, 1, 5);
     console.log(arr7);//[1,2,5,4]
+
+
+//fill 替换（替换的元素的值，开始的位置，结束的位置）
+    let arr8=[1,2,3,4];
+    arr8.fill(5,2,3);
+    console.log(arr8);   //[ 1, 2, 5, 4 ]
 }
 
 

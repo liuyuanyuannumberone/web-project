@@ -1,17 +1,16 @@
-
-//找到满足条件的索引 |值  findIndex  find
+//找到满足条件的索引 | 值  findIndex  find
 {
     // arr.findIndex(callback(ele, index))
     // 返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1，会立即返回该元素的索引
     // arr.find(callback(ele, index));
-//返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。会立即返回这个元素的值
+   //返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。会立即返回这个元素的值
     list = [{id: 1}, {id: 2}, {id: 1}];
     let index = list.findIndex(item => {
-        if (item.id === 1) {
+        if (item.id === 2) {
             return true;
         }
     });
-    console.log(index); //0
+    console.log(index); //1
 }
 {
     let students = [

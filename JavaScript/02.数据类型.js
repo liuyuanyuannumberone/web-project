@@ -1,4 +1,3 @@
-
 //typeof
 console.log(typeof ''); // string 有效
 console.log(typeof 1); // number 有效
@@ -12,8 +11,17 @@ console.log(Object.prototype.toString.call(new Date()));   // [object Date]
 console.log(Object.prototype.toString.call(new RegExp())); // [object RegExp]
 console.log(Object.prototype.toString.call({})); //[object Object]
 
+let a;
+if (a === undefined) {
+    console.log(1);  //执行
+}
+if (typeof a === "undefined") {
+    console.log(2);  //执行
+}
 
-
+if (typeof a === undefined) {
+    console.log(3);  //不执行
+}
 
 
 //有上边的就够了

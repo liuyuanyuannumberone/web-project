@@ -2,3 +2,5 @@
 let aa = [1, 2, 3];
 str = aa.join(',');
 console.log(str);
+
+console.log(['', '', '']);

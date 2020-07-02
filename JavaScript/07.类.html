@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+</head>
+<body>
+<script>
+    let Animal = function (type) {
+        this.type = type;
+        this.eat = function () {
+            console.log("eat");
+        }
+    };
+    //通过原型链的方式继承，挂载在__proto__下面,这样做实例化出来的对象只会挂在树根上，不会挂在树杈上。
+    //这样实例出来的对象不会太大，但又具备这样的功能。
+    Animal.prototype.sleep = function () {
+        console.log('i eat food');
+        Animal.walk();
+    };
+    //静态方法是挂在类上的，实例化对象无法访问
+    Animal.walk = function () {
+        console.log('走');
+    };
+    let dog = new Animal('dog');
+
+    //继承 完成了Anima类的全部继承
+    let Dog = function () {
+        Animal.call(this);
+    };
+    Dog.prototype = Animal.prototype;
+    let dogD = new Dog();
+
+
+    //--------------------ES6-------------------------------------------------------------------------------
+
+    class Student {
+        constructor(type) {
+            this.type = type;
+            this.eat = function () {
+                console.log('eat food');
+            }
+        }
+
+        //原型链上的方法
+        sleep() {
+            Student.walk();
+            console.log(this.age);
+        }
+
+        //属性 age被保护起来了
+        get age() {
+            return this._age || 0;
+        }
+
+        set age(val) {
+            if (val < 10 && val > 6) this._age = val;
+        }
+
+        //静态方法是挂在类上的，实例化对象无法访问,定义属于自己类本身的东西
+        //类的静态方法拿不到实例对象，如果不用，可以定义为静态方法
+        static walk() {
+            // console.log(this.type);//undefined
+            // console.log(this.age);//undefined
+            console.log('walk walk');
+        }
+    }
+
+    let stu = new Student('学生');
+
+    //继承
+    class GoodStudent extends Student {
+        constructor(type, score) {
+            super(type);
+            this.score = score;
+        }
+    }
+
+
+</script>
+</body>
+</html>
