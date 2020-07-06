@@ -5,7 +5,7 @@ let obj = {
 };
 console.log(Object.keys(obj));   //取出对象的键作为数组  [ 'name', 'age' ]
 console.log(Object.values(obj));   //取出对象的值作为数组 [ '刘园园', 25 ]
-console.log(Object.entries(obj));   //把对象的键值数组   [[name,'刘园园'],[age,25]]
+console.log(Object.entries(obj));   //把对象的键值数组  [ [ 'name', '刘园园' ], [ 'age', 25 ] ]
 
 
 //把对象中的值组成键值对；

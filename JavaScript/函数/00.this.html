@@ -11,22 +11,12 @@
         console.log(this);//window
     }
 
-    f1();
-
-    //定时器中的this
-    // setInterval(function () {
-    //     console.log(this);//window
-    // }, 3000);
-
-
-    //构造函数
     function Person() {
         console.log(this);//实例对象
         this.sayHi = function () {
             console.log(this); //实例对象
         };
     }
-    //原型中的方法
     Person.prototype.eat = function () {
         console.log(this);//实例对象
     };
