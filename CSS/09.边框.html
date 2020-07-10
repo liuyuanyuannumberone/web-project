@@ -14,6 +14,7 @@
 <div class="c3">
 
 </div>
+
 </body>
 <style>
     .c1{
@@ -27,17 +28,25 @@
     .c2{
         width:400px;
         height: 200px;
-        /* border-width: 30px; */
-        border:30px solid transparent;
-        border-image:url(./img/border.png) 30 round;
-    }
-    .c3{
-        width:400px;
-        height: 200px;
         border-bottom:30px solid red;
         /* border-right:30px solid blue; */
         border-left:30px solid blue;
         border-right:30px solid blue;
     }
+
+    .c3{
+        width:400px;
+        height: 200px;
+        border:30px solid transparent;
+        border-image-source: url("./img/border.png");
+        border-image-slice: 30 30 30 30;
+        /*border-image-width: 30px;*/ /*默认是边框的宽度，无论多大它不挤压文字*/
+        border-image-repeat: round;
+
+        /*border-image:url(./img/border.png) 30 round;*/
+
+    }
+
+
 </style>
 </html>

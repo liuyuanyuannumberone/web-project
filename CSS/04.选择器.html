@@ -26,8 +26,8 @@ id选择器  #dv{}                +100
 组合选择器
 http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
 
- E,F E和F一样
- EF 一起出现才起作用才生效
+ E,F    E和F一样
+ EF    一起出现才起作用才生效
 
 
 兄弟：
@@ -37,10 +37,14 @@ E+F E后面同级的第一个F
 
 子代：
 E F  E所有后代F  <div>p<></p>p<></p><h1>p<></p></h1><div>
-E>F  E直接后代F  <div>p<></p>p<></p><div>
+E>F  E所有直接后代F  <div>p<></p>p<></p><div>
 
 
 E:nth-of-type(n) 同级
+p:nth-of-type(2n+1) {
+  color: red;
+}
+
 E:first-child	匹配父元素的第一个子元素
 E:nth-child(n) 匹配父元素的第n个子元素
 
