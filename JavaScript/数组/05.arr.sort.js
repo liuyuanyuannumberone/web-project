@@ -22,6 +22,8 @@ function fn(attr) {
 }
 
 arr.sort(fn("time"));
-for (let i in arr) {
-    console.log(arr[i].name + "====" + arr[i].size + "====" + arr[i].time);
-}
+
+
+// for (let i in arr) {
+    console.log(arr);
+// }

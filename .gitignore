@@ -3,7 +3,7 @@
 dist/
 out/
 node_modules/
-before/
-test.html
-test.js
-https://www.cnblogs.com/kevingrace/p/5690241.html
+before
+test.htm*
+test.j*
+https://www.cnblogs.com/kevingrace/p/5690241.html/
