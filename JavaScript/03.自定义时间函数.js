@@ -26,7 +26,6 @@ console.log(formatDate(new Date()));  //2020-06-27 14:43:01
 
 
 
-
 /**
  *
  * 秒数(number)转化为00:00:00的时间格式

@@ -10,7 +10,7 @@ arr.some(currentValue,index,arr);
     let flag = arr.some(ele => {
         return ele > 10;
     });
-    console.log(flag);  //true
+    // console.log(flag);  //true
 }
 {
     list = [{id: 1}, {id: 2}];
