@@ -24,11 +24,12 @@ for (let i in arr) {
     console.log(typeof i, i);
 }
 
+
 //可以遍历任何数据结构
 for (let item of arr) {
     console.log(item);
 }
 
-console.log(1111);
+
 
 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>反射</title>
+</head>
+<body>
+</body>
+<script>
+    {
+        //普通方法先指定方法
+        let a = Math.floor.apply(null, [3.2]); //3
+        //反射先指定了条件，然后再指定方法
+        let b = Reflect.apply(Math.floor, null, [3.72]); //3
+    }
+
+    {
+
+    }
+
+</script>
+</html>

@@ -11,3 +11,4 @@ let obj = {
 };
 console.log(obj); //{ x: 1, y: 2, z: 3, lyy: 'liu' }
 obj.hello();
+
