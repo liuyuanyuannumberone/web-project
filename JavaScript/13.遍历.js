@@ -29,7 +29,21 @@ for (let i in arr) {
 for (let item of arr) {
     console.log(item);
 }
+console.log("============");
 
+let obj = {name: 'lyy', age: 14};
+
+
+let flag1 = false;
+for (let j = 0; j < 2; j++) {
+    for (let i in obj) {
+        console.log(typeof i + '----' + i + ':' + obj[i]);
+        flag1 = true;
+        break;
+    }
+    console.log(j);
+    if (flag1) break;
+}
 
 
 

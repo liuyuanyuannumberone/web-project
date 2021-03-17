@@ -16,3 +16,6 @@ function test(arr, type1,type2) {
 }
 
 let showText = test`你的年龄${name}不是${age}`;
+
+
+

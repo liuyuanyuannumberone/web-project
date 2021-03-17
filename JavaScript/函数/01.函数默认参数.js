@@ -25,6 +25,7 @@
 //spread
 
 {
+    console.log(111);
 
     function add(x = 1, y = 2, z = 3) {
         console.log(x, y, z);
@@ -34,5 +35,7 @@
     // add(arr[0],arr[1],arr[2]);
     // add.apply(this, arr); //ES5
     add(...arr);
+
+
 }
 

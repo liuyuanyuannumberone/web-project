@@ -21,10 +21,13 @@
         {id: 5, name: '张三', gender: 0, age: 18, hobbies: '吃饭,睡觉'}
     ];
 
-    let stu = {id: 1, name: '张小二', gender: 0, age: 18, hobbies: '吃饭,睡觉'};
+    let stu = {id: 100, name: '张小二', gender: 0, age: 18, hobbies: '吃饭,睡觉'};
 
     let item = students.find(item => {
         return item.id === stu.id;
     });
     console.log(item);//{ id: 1, name: '张三', gender: 0, age: 18, hobbies: '吃饭,睡觉' }
+    if (item === undefined) {
+        console.log(1);  //执行
+    }
 }

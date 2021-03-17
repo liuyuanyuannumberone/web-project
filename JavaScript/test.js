@@ -1,21 +1,14 @@
-// let  str="[aaaa]我的爹娘[user]你是[mmm]你好[use]";
-let str = "[mmmms][asasasa]";
-if (str.length > 0) {
-    let regex = /\[(.+?)\]/g;
-    arr = str.match(regex);
+let path='/api/model/ema-001';
+console.log(path.lastIndexOf("/"));
+console.log(path.substring(path.lastIndexOf("/") + 1));
+console.log(path);
 
-    if (arr && arr.length > 0) {
-        arr.forEach(item => {
-            item = item.slice(1, item.length - 1);
-            console.log(item);
-        })
-    }
-    console.log(arr);
+
+let obj={"lyy":"aaa","wjj":"bbbbb"};
+for (let i in obj ){
+    console.log(i);
 }
 
-
-let obj = {"上海": 123, "广州": 345};
-for (let item in obj) {
-    console.log(item);
-}
+let refer='https://192.16.66.143:9002/#/detail';
+console.log(refer.substring(refer.indexOf("#/") + 2, refer.length));
 

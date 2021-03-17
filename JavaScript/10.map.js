@@ -22,3 +22,5 @@ for (let [key, value] of map) console.log(key, value);
 
 
 map.clear();
+
+

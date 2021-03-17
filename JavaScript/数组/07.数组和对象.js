@@ -15,3 +15,6 @@ car.forEach(item => {
     shopCount[item.id] = item.count;
 });
 console.log(shopCount);
+
+
+
