@@ -26,6 +26,9 @@ arr.some(currentValue,index,arr);
 
 
 
+
+
+
 /*
 *   splice
 * （开始的位置，删除的个数，替换的元素的值）

@@ -16,7 +16,7 @@
 {
     function sum(base, ...all_var) {
 
-        console.log(all_var); //数组
+        console.log(1,all_var); //数组
     }
 
     sum(1, 2, 3, 4, 5, 6, 7, 8);

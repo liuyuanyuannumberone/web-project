@@ -1,14 +1,11 @@
-let path='/api/model/ema-001';
-console.log(path.lastIndexOf("/"));
-console.log(path.substring(path.lastIndexOf("/") + 1));
-console.log(path);
-
-
-let obj={"lyy":"aaa","wjj":"bbbbb"};
-for (let i in obj ){
-    console.log(i);
+{
+    list = [{id: 1}, {id: 2}];
+    list.some((item, index) => {
+        if (item.id === 1) {
+            item.id=3;
+            return true;
+        }
+    });
+    console.log(list);
 }
-
-let refer='https://192.16.66.143:9002/#/detail';
-console.log(refer.substring(refer.indexOf("#/") + 2, refer.length));
 
