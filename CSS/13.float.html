@@ -36,9 +36,18 @@
         height: 0;
     }
 
+    .clearfix:after{
+        content: '';
+        clear: both;
+        display: table;
+    }
+    .clearfix{
+        *zoom:1;/*兼容IE低版本*/
+    }
 </style>
 <body>
 <!--
+ float 具有包裹性  破坏性  清空格  https://www.cnblogs.com/wangfupeng1988/p/4325007.html
  元素浮动，脱离文档流，但是没有脱离文字流（所以实现了文字环绕效果）,浮动元素都是尽量靠上
  浮动元素可以设置宽和高。都转换为inline-block模式 直接给高度和宽度就可以了。
  父元素高度坍塌:设置浮动元素的父元素:
