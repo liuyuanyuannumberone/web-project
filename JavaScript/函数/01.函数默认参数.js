@@ -7,7 +7,7 @@
         console.log(x, y, z, d);
     }
 
-    test(3);
+   test(3);
     test(2, undefined, 6);
 }
 
@@ -25,7 +25,6 @@
 //spread
 
 {
-    console.log(111);
 
     function add(x = 1, y = 2, z = 3) {
         console.log(x, y, z);
