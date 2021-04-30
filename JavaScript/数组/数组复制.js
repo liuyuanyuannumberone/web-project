@@ -33,5 +33,5 @@ JSON.parse(JSON.stringify(arr))
     let arr = [1,2];
     let [...arrcpopy] = arr;
     arr[1] = 100;
-    console.log(arrcpopy)
+    console.log(arrcpopy);
 }
