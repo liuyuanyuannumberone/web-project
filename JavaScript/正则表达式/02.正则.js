@@ -6,6 +6,7 @@ console.log(/./.test("除了回车换行以为的任意字符"));//true
 console.log(/.*/.test("0个到多个"));//true
 console.log(/.+/.test("1个到多个"));//true
 console.log(/.?/.test("哈哈"));//true
+
 console.log(/[0-9]/.test("9527"));//true
 console.log(/[a-z]/.test("what"));//true
 console.log(/[A-Z]/.test("Are"));//true

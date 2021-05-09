@@ -9,3 +9,4 @@ let str='1-1';
 // console.log(arr);
 arr=arr.map(item=>item=item.trim());
 
+console.log(/[0-9]/.test("aaaaa9527"));//true
